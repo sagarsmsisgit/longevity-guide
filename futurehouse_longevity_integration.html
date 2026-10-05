@@ -1,0 +1,165 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.wrap{padding:1.5rem 0}
+.hero{background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:1.25rem;margin-bottom:18px;border:0.5px solid var(--color-border-secondary)}
+.hero-title{font-size:15px;font-weight:500;color:var(--color-text-primary);margin-bottom:6px}
+.hero-body{font-size:13px;color:var(--color-text-secondary);line-height:1.7}
+.highlight{background:var(--color-background-secondary);border-left:3px solid #1D9E75;border-radius:0 var(--border-radius-md) var(--border-radius-md) 0;padding:10px 14px;margin:10px 0;font-size:13px;color:var(--color-text-primary);line-height:1.65}
+.section-label{font-size:11px;font-weight:500;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.06em;margin:18px 0 10px}
+.agent-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin-bottom:18px}
+.agent-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.1rem}
+.agent-header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.agent-icon{width:36px;height:36px;border-radius:var(--border-radius-md);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.a-crow{background:#E6F1FB}
+.a-falcon{background:#EEEDFE}
+.a-owl{background:#FAEEDA}
+.a-phoenix{background:#FAECE7}
+.a-finch{background:#E1F5EE}
+.a-kosmos{background:#F1EFE8}
+.agent-name{font-size:14px;font-weight:500;color:var(--color-text-primary)}
+.agent-role{font-size:11px;color:var(--color-text-tertiary)}
+.agent-desc{font-size:12px;color:var(--color-text-secondary);line-height:1.6;margin-bottom:8px}
+.longevity-use{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:8px 10px;font-size:12px;color:var(--color-text-secondary);line-height:1.5}
+.longevity-use strong{color:var(--color-text-primary);font-size:11px;display:block;margin-bottom:3px;text-transform:uppercase;letter-spacing:0.04em}
+.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:var(--border-radius-md);margin:2px 2px 0 0}
+.t-green{background:#EAF3DE;color:#27500A}
+.t-blue{background:#E6F1FB;color:#0C447C}
+.t-purple{background:#EEEDFE;color:#3C3489}
+.t-amber{background:#FAEEDA;color:#633806}
+.t-free{background:#EAF3DE;color:#27500A;font-weight:500}
+.pipeline{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.25rem;margin-bottom:12px}
+.pipe-title{font-size:14px;font-weight:500;color:var(--color-text-primary);margin-bottom:12px}
+.pipe-steps{display:flex;flex-direction:column;gap:8px}
+.pipe-step{display:flex;gap:10px;align-items:flex-start}
+.pipe-arrow{display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--color-text-tertiary);padding:2px 0}
+.pipe-box{flex:1;background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:8px 12px}
+.pipe-box-title{font-size:12px;font-weight:500;color:var(--color-text-primary);margin-bottom:2px}
+.pipe-box-desc{font-size:11px;color:var(--color-text-secondary);line-height:1.5}
+.badge{display:inline-block;font-size:10px;padding:1px 7px;border-radius:var(--border-radius-md);font-weight:500;margin-left:6px}
+.b-free{background:#EAF3DE;color:#27500A}
+.b-api{background:#E6F1FB;color:#0C447C}
+.btn{font-size:12px;padding:5px 10px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:transparent;color:var(--color-text-primary);cursor:pointer;margin-top:10px}
+.btn:hover{background:var(--color-background-secondary)}
+.vs-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.vs-box{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px}
+.vs-title{font-size:12px;font-weight:500;color:var(--color-text-primary);margin-bottom:6px}
+.vs-item{font-size:12px;color:var(--color-text-secondary);line-height:1.6;padding:2px 0}
+</style>
+
+<div class="wrap">
+
+<div class="hero">
+  <div class="hero-title">FutureHouse — a nonprofit backed by Eric Schmidt, built exactly for what you need</div>
+  <div class="hero-body">FutureHouse is a nonprofit that launched in May 2025 with AI agents that outperform PhD-level researchers at reading and synthesizing science papers. Their mission: make scientific discovery free and fast for everyone. Sound familiar? It's your mission too. And their platform API is free to use.</div>
+  <span class="tag t-free">✓ Free to use</span>
+  <span class="tag t-blue">Nonprofit</span>
+  <span class="tag t-purple">API access</span>
+  <span class="tag t-amber">Backed by Eric Schmidt</span>
+  <span class="tag t-green">Powered by Claude (Anthropic)</span>
+</div>
+
+<div class="section-label">The 5 agents — what each one does for your longevity platform</div>
+<div class="agent-grid">
+  <div class="agent-card">
+    <div class="agent-header">
+      <div class="agent-icon a-crow">🐦</div>
+      <div><div class="agent-name">Crow</div><div class="agent-role">Quick science answer</div></div>
+    </div>
+    <div class="agent-desc">Searches 38M+ PubMed papers and gives concise, cited answers. Faster than any Google search. Outperforms PhD researchers at finding precise facts.</div>
+    <div class="longevity-use"><strong>Your use</strong>User asks "Does amla reduce HbA1c?" → Crow finds the exact papers and gives a cited answer in seconds. Powers your AI coach's Q&A.</div>
+  </div>
+  <div class="agent-card">
+    <div class="agent-header">
+      <div class="agent-icon a-falcon">🦅</div>
+      <div><div class="agent-name">Falcon</div><div class="agent-role">Deep literature review</div></div>
+    </div>
+    <div class="agent-desc">Digests thousands of papers and produces a full thematic review. Like a systematic review done in minutes, not months. Has access to OpenTargets database.</div>
+    <div class="longevity-use"><strong>Your use</strong>"What does all the research say about South Asian metabolic aging?" → Falcon produces a full report you can use as your app's knowledge base.</div>
+  </div>
+  <div class="agent-card">
+    <div class="agent-header">
+      <div class="agent-icon a-owl">🦉</div>
+      <div><div class="agent-name">Owl</div><div class="agent-role">Gap finder / "Has Anyone?"</div></div>
+    </div>
+    <div class="agent-desc">Tells you if something has been researched before. Finds gaps. Formerly called "Has Anyone" — the name says it all.</div>
+    <div class="longevity-use"><strong>Your use</strong>"Has anyone studied walking after rice meals in South Asian populations?" → Owl finds what exists and what's still unknown. Helps you build the most evidence-based product.</div>
+  </div>
+  <div class="agent-card">
+    <div class="agent-header">
+      <div class="agent-icon a-phoenix">🔥</div>
+      <div><div class="agent-name">Phoenix</div><div class="agent-role">Molecule & chemistry</div></div>
+    </div>
+    <div class="agent-desc">Designs molecules, plans synthesis, does cheminformatics. For the supplement analyzer — analyzes how compounds interact at a molecular level.</div>
+    <div class="longevity-use"><strong>Your use</strong>"How does curcumin interact with the mTOR pathway?" → Phoenix gives molecular-level analysis you can translate into supplement safety advice.</div>
+  </div>
+  <div class="agent-card">
+    <div class="agent-header">
+      <div class="agent-icon a-finch">📊</div>
+      <div><div class="agent-name">Finch</div><div class="agent-role">Data analysis</div></div>
+    </div>
+    <div class="agent-desc">Analyzes datasets, runs statistics, finds trends. Useful for interpreting user biomarker data across your whole platform.</div>
+    <div class="longevity-use"><strong>Your use</strong>When you have 1000 users logging HbA1c — Finch identifies which habits correlate with the biggest improvements across your South Asian user base.</div>
+  </div>
+</div>
+
+<div class="section-label">How to plug FutureHouse into your longevity platform</div>
+<div class="pipeline">
+  <div class="pipe-title">Your research pipeline — automated, free, PhD-level</div>
+  <div class="pipe-steps">
+    <div class="pipe-step">
+      <div class="pipe-box">
+        <div class="pipe-box-title">Step 1 — User asks a longevity question <span class="badge b-free">Your app</span></div>
+        <div class="pipe-box-desc">"Is ashwagandha safe to take with my blood pressure medication?"</div>
+      </div>
+    </div>
+    <div class="pipe-arrow">↓</div>
+    <div class="pipe-step">
+      <div class="pipe-box">
+        <div class="pipe-box-title">Step 2 — Crow searches the science <span class="badge b-api">FutureHouse API</span></div>
+        <div class="pipe-box-desc">Crow queries 38M papers, finds relevant clinical trials and drug interaction studies. Returns citations + summary.</div>
+      </div>
+    </div>
+    <div class="pipe-arrow">↓</div>
+    <div class="pipe-step">
+      <div class="pipe-box">
+        <div class="pipe-box-title">Step 3 — Gemini translates it <span class="badge b-free">Free tier</span></div>
+        <div class="pipe-box-desc">Gemini takes Crow's scientific output and converts it to plain language for your user, with the Indian dietary context added.</div>
+      </div>
+    </div>
+    <div class="pipe-arrow">↓</div>
+    <div class="pipe-step">
+      <div class="pipe-box">
+        <div class="pipe-box-title">Step 4 — User gets a trusted, cited answer <span class="badge b-free">Your platform</span></div>
+        <div class="pipe-box-desc">"Based on 3 clinical studies, ashwagandha may lower blood pressure moderately. Combined with your medication, discuss with your doctor first. [Cite: Chandrasekhar et al, 2012]"</div>
+      </div>
+    </div>
+  </div>
+  <button class="btn" onclick="sendPrompt('Show me the code to call FutureHouse Crow API and then pass the result to Gemini to translate into plain language for a longevity health app')">Show me the code ↗</button>
+</div>
+
+<div class="pipeline">
+  <div class="pipe-title">FutureHouse vs just using Gemini alone — why it matters</div>
+  <div class="vs-row">
+    <div class="vs-box">
+      <div class="vs-title">❌ Gemini alone</div>
+      <div class="vs-item">Answers from training data (may be outdated)</div>
+      <div class="vs-item">No real citations</div>
+      <div class="vs-item">Can hallucinate studies</div>
+      <div class="vs-item">Can't search new 2025–26 papers</div>
+    </div>
+    <div class="vs-box">
+      <div class="vs-title">✅ FutureHouse + Gemini</div>
+      <div class="vs-item">Real papers from PubMed, live</div>
+      <div class="vs-item">Real DOI citations users can verify</div>
+      <div class="vs-item">Outperforms PhD researchers at retrieval</div>
+      <div class="vs-item">Finds papers published this week</div>
+    </div>
+  </div>
+</div>
+
+<div class="highlight" style="margin-top:14px">
+  <strong>Most exciting thing:</strong> FutureHouse's agents are actually powered by Claude (Anthropic) internally. So you're building: FutureHouse (science retrieval) + Gemini (plain language) + AlphaFold (protein data) + DeepMind (genomics). That's a stack no paid competitor currently has. And it's free.
+</div>
+
+</div>

@@ -1,0 +1,215 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.wrap{padding:1.5rem 0;font-family:inherit}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px}
+.tab{font-size:12px;padding:6px 12px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:transparent;color:var(--color-text-secondary);cursor:pointer;transition:all 0.15s}
+.tab.active{background:var(--color-background-inverse);color:var(--color-text-inverse);border-color:transparent}
+.panel{display:none}.panel.active{display:block}
+.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.25rem;margin-bottom:12px}
+.card-title{font-size:14px;font-weight:500;color:var(--color-text-primary);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.card-body{font-size:13px;color:var(--color-text-secondary);line-height:1.75}
+.step{display:flex;gap:10px;margin-bottom:10px;align-items:flex-start}
+.step-num{min-width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;flex-shrink:0;margin-top:1px}
+.n-blue{background:#E6F1FB;color:#0C447C}
+.n-green{background:#E1F5EE;color:#085041}
+.n-purple{background:#EEEDFE;color:#3C3489}
+.n-amber{background:#FAEEDA;color:#633806}
+.n-coral{background:#FAECE7;color:#712B13}
+.step-text{font-size:13px;color:var(--color-text-secondary);line-height:1.65}
+.step-text strong{color:var(--color-text-primary);font-weight:500}
+.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:var(--border-radius-md);margin:2px 2px 0 0}
+.t-green{background:#EAF3DE;color:#27500A}
+.t-teal{background:#E1F5EE;color:#085041}
+.t-blue{background:#E6F1FB;color:#0C447C}
+.t-amber{background:#FAEEDA;color:#633806}
+.t-purple{background:#EEEDFE;color:#3C3489}
+.t-gray{background:#F1EFE8;color:#444441}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:10px}
+.mini-card{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px}
+.mini-title{font-size:12px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px}
+.mini-body{font-size:11px;color:var(--color-text-secondary);line-height:1.6}
+.highlight{background:var(--color-background-secondary);border-left:3px solid #1D9E75;border-radius:0 var(--border-radius-md) var(--border-radius-md) 0;padding:10px 14px;margin:10px 0;font-size:13px;color:var(--color-text-primary);line-height:1.65}
+.section-label{font-size:11px;font-weight:500;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.06em;margin:14px 0 8px}
+.btn{font-size:12px;padding:5px 10px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:transparent;color:var(--color-text-primary);cursor:pointer;margin-top:8px}
+.btn:hover{background:var(--color-background-secondary)}
+.food-row{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:0.5px solid var(--color-border-tertiary)}
+.food-row:last-child{border-bottom:none}
+.food-emoji{font-size:20px;flex-shrink:0;margin-top:2px}
+.food-name{font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:2px}
+.food-why{font-size:12px;color:var(--color-text-secondary);line-height:1.5}
+</style>
+
+<div class="wrap">
+<div class="tabs">
+  <button class="tab active" onclick="show('start')">1. How to Start</button>
+  <button class="tab" onclick="show('build')">2. Skills to Build</button>
+  <button class="tab" onclick="show('tech')">3. How to Build</button>
+  <button class="tab" onclick="show('privacy')">4. User Data Safety</button>
+  <button class="tab" onclick="show('self')">5. Test on Yourself</button>
+  <button class="tab" onclick="show('guide')">6. South Asian Guide</button>
+  <button class="tab" onclick="show('deepmind')">7. DeepMind Tools</button>
+</div>
+
+<!-- PANEL 1: HOW TO START -->
+<div class="panel active" id="panel-start">
+  <div class="card">
+    <div class="card-title">a) Do you need to be a researcher first?</div>
+    <div class="highlight">No. You need to be a translator — someone who reads research and makes it usable for real people. That's harder than being a researcher. And more valuable.</div>
+    <div class="step"><div class="step-num n-green">1</div><div class="step-text"><strong>Read, don't write.</strong> Start by consuming — not producing. Read 2 papers a week on longevity. Use Google Scholar, PubMed, Semantic Scholar.</div></div>
+    <div class="step"><div class="step-num n-green">2</div><div class="step-text"><strong>Dr. Mohan's work is your foundation.</strong> His research on South Asian metabolic risk, type 2 diabetes, and visceral fat in Indians is exactly the clinical basis you need. You already have a head start.</div></div>
+    <div class="step"><div class="step-num n-green">3</div><div class="step-text"><strong>You don't need a PhD.</strong> Peter Attia, Bryan Johnson, and Rhonda Patrick have all built massive longevity platforms as practitioners, not academic researchers.</div></div>
+  </div>
+  <div class="card">
+    <div class="card-title">b) What kind of research — like Dr. Mohan's papers?</div>
+    <div class="card-body">
+      <div class="section-label">Yes — exactly that type. Focus on these research areas:</div>
+      <div class="step"><div class="step-num n-blue">1</div><div class="step-text"><strong>South Asian metabolic risk</strong> — Indians have 3–5× higher diabetes risk at the same BMI as Europeans (Dr. Mohan's core finding)</div></div>
+      <div class="step"><div class="step-num n-blue">2</div><div class="step-text"><strong>Epigenetics of aging</strong> — how lifestyle changes gene expression. Horvath Clock, GrimAge, PhenoAge studies</div></div>
+      <div class="step"><div class="step-num n-blue">3</div><div class="step-text"><strong>Indian diet & longevity</strong> — turmeric, amla, dal, fasting traditions. Kerala and Okinawa comparison studies</div></div>
+      <div class="step"><div class="step-num n-blue">4</div><div class="step-text"><strong>mTOR, IGF-1, sirtuins</strong> — the molecular pathways that Sinclair, Attia research. AlphaFold maps these proteins</div></div>
+      <div class="step"><div class="step-num n-blue">5</div><div class="step-text"><strong>Sleep & HRV in South Asians</strong> — genetic variants (rs7903146 TCF7L2) that increase metabolic risk specific to Indians</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">c) What to learn before starting — in order</div>
+    <div class="grid2">
+      <div class="mini-card"><div class="mini-title">Week 1–2</div><div class="mini-body">Read Lifespan by David Sinclair. Read Peter Attia's Outlive. Understand the 4 horsemen of aging death.</div></div>
+      <div class="mini-card"><div class="mini-title">Week 3–4</div><div class="mini-body">Read Dr. Mohan's papers on Indian metabolic syndrome. Download free PDFs from his institute (drmohansdiabetes.com)</div></div>
+      <div class="mini-card"><div class="mini-title">Month 2</div><div class="mini-body">Learn basic Python (freeCodeCamp, 4 hrs). Build a simple Gemini chatbot that answers longevity questions.</div></div>
+      <div class="mini-card"><div class="mini-title">Month 3</div><div class="mini-body">Deploy your first working app. Show 10 real people. Get feedback. Iterate. This is more valuable than any course.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PANEL 2: SKILLS -->
+<div class="panel" id="panel-build">
+  <div class="card">
+    <div class="card-title">Technical skills — in order of priority</div>
+    <div class="step"><div class="step-num n-purple">1</div><div class="step-text"><strong>Python basics (4–6 weeks)</strong> — freeCodeCamp or CS50P on edX. Free. This unlocks everything.</div></div>
+    <div class="step"><div class="step-num n-purple">2</div><div class="step-text"><strong>Gemini / OpenAI API calls (1 week)</strong> — just HTTP requests. Simpler than it sounds. Google AI Studio has free templates.</div></div>
+    <div class="step"><div class="step-num n-purple">3</div><div class="step-text"><strong>Basic web frontend (3–4 weeks)</strong> — HTML, CSS, a little JavaScript. Or use Next.js with templates. You don't need to be a designer.</div></div>
+    <div class="step"><div class="step-num n-purple">4</div><div class="step-text"><strong>Supabase / database basics (1 week)</strong> — storing user data. Their docs are beginner-friendly.</div></div>
+    <div class="step"><div class="step-num n-purple">5</div><div class="step-text"><strong>RAG (Retrieval Augmented Generation)</strong> — feeding research papers to an AI so it answers from real science. This is your core differentiator. LangChain or LlamaIndex, both free.</div></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Non-technical skills — equally important</div>
+    <div class="step"><div class="step-num n-green">1</div><div class="step-text"><strong>Health literacy</strong> — ability to read and summarize clinical papers. Practice by summarizing one paper per week in plain language.</div></div>
+    <div class="step"><div class="step-num n-green">2</div><div class="step-text"><strong>Prompt engineering</strong> — how to instruct AI to give accurate, safe health information. Free guide at docs.anthropic.com</div></div>
+    <div class="step"><div class="step-num n-green">3</div><div class="step-text"><strong>User empathy</strong> — understanding what a 45-year-old Indian professional actually needs to change their habits. Talk to 20 real people before building anything.</div></div>
+  </div>
+  <div class="highlight">Total time to first working app: 8–12 weeks if you're consistent. You don't need all skills upfront — learn while building.</div>
+</div>
+
+<!-- PANEL 3: HOW TO BUILD -->
+<div class="panel" id="panel-tech">
+  <div class="card">
+    <div class="card-title">Phase 1 — Build in 4 weeks (free stack)</div>
+    <div class="step"><div class="step-num n-amber">1</div><div class="step-text"><strong>Set up Gemini API key</strong> — Go to aistudio.google.com → Get API key → Free, no credit card needed</div></div>
+    <div class="step"><div class="step-num n-amber">2</div><div class="step-text"><strong>Create your knowledge base</strong> — Collect 20–30 longevity papers (PubMed, Dr. Mohan's institute). Convert to text. Feed into a vector database (Supabase pgvector, free).</div></div>
+    <div class="step"><div class="step-num n-amber">3</div><div class="step-text"><strong>Build the coach</strong> — When user asks a question, your app finds relevant paper excerpts + sends to Gemini with a system prompt like "You are a longevity coach for South Asians. Use only this evidence…"</div></div>
+    <div class="step"><div class="step-num n-amber">4</div><div class="step-text"><strong>Deploy on Vercel</strong> — Free. Your app is live at yourname.vercel.app in minutes.</div></div>
+    <div class="step"><div class="step-num n-amber">5</div><div class="step-text"><strong>Share with 10 people</strong> — Real feedback in week 1 is worth more than 6 months of planning.</div></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Phase 2 — Add layers (months 2–4)</div>
+    <div class="grid2">
+      <div class="mini-card"><div class="mini-title">Biomarker logger</div><div class="mini-body">Simple form: HbA1c, fasting glucose, waist circumference, sleep hours. Gemini interprets trend over time.</div></div>
+      <div class="mini-card"><div class="mini-title">Supplement checker</div><div class="mini-body">User types "I take ashwagandha + metformin" → Gemini cross-checks AlphaFold interaction data + safety literature.</div></div>
+      <div class="mini-card"><div class="mini-title">Indian food database</div><div class="mini-card"><div class="mini-body">Build from ICMR nutritional data (free, public). Map dal, amla, ghee, rice to longevity impact scores.</div></div></div>
+      <div class="mini-card"><div class="mini-title">Weekly digest</div><div class="mini-body">Cron job pulls new PubMed papers tagged "longevity" → Gemini summarizes → email to subscribers via Resend (free tier).</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PANEL 4: PRIVACY -->
+<div class="panel" id="panel-privacy">
+  <div class="card">
+    <div class="card-title">User data safety — this is critical for health apps</div>
+    <div class="highlight">Health data is the most sensitive data that exists. You must design for privacy from day one, not add it later.</div>
+    <div class="step"><div class="step-num n-coral">1</div><div class="step-text"><strong>Supabase Row Level Security (RLS)</strong> — Every user can only see their own data. Built-in, free, one line of SQL to enable. Non-negotiable.</div></div>
+    <div class="step"><div class="step-num n-coral">2</div><div class="step-text"><strong>Never send raw health data to AI APIs.</strong> Anonymize before sending. Send "user has HbA1c of 6.8" not the user's name or email.</div></div>
+    <div class="step"><div class="step-num n-coral">3</div><div class="step-text"><strong>No data selling, ever.</strong> Since you're free + open source, write a 1-page privacy policy stating: data is never sold, never shared, stored encrypted. This is your trust moat.</div></div>
+    <div class="step"><div class="step-num n-coral">4</div><div class="step-text"><strong>DPDP Act compliance (India 2023)</strong> — India's new Digital Personal Data Protection Act requires consent, purpose limitation, and data minimization. Read the basics at meity.gov.in</div></div>
+    <div class="step"><div class="step-num n-coral">5</div><div class="step-text"><strong>Medical disclaimer</strong> — Always display: "This is not medical advice. Consult your doctor." Required legally and ethically. Never position the app as a diagnostic tool.</div></div>
+    <div class="step"><div class="step-num n-coral">6</div><div class="step-text"><strong>Optional: local-first architecture</strong> — Store sensitive data only on the user's device. Use localStorage + export. No server sees their health data at all. This is the gold standard for trust.</div></div>
+  </div>
+</div>
+
+<!-- PANEL 5: TEST ON YOURSELF -->
+<div class="panel" id="panel-self">
+  <div class="card">
+    <div class="card-title">Implement on yourself first — your 90-day personal protocol</div>
+    <div class="highlight">Every great health product founder tests on themselves first. Bryan Johnson spends $2M/year. You can do 80% of what matters for free.</div>
+    <div class="section-label">Baseline measurements (do this week)</div>
+    <div class="step"><div class="step-num n-green">1</div><div class="step-text"><strong>Fasting blood glucose</strong> — ₹150 at any lab. Target: under 90 mg/dL (Dr. Mohan's Indian-specific cut-off)</div></div>
+    <div class="step"><div class="step-num n-green">2</div><div class="step-text"><strong>HbA1c</strong> — ₹300. Target: under 5.6%. Indians show organ damage at levels that appear "normal" in Western charts.</div></div>
+    <div class="step"><div class="step-num n-green">3</div><div class="step-text"><strong>Waist circumference</strong> — Free. Target: men under 90cm, women under 80cm (Asian-specific WHO cut-offs, lower than Western standards)</div></div>
+    <div class="step"><div class="step-num n-green">4</div><div class="step-text"><strong>Resting heart rate + HRV</strong> — Free with any Android/iPhone health app. Track morning HRV as a proxy for biological age.</div></div>
+    <div class="step"><div class="step-num n-green">5</div><div class="step-text"><strong>Sleep hours + quality</strong> — Use free app (SleepWatch or Google Fit). Target: 7–8 hrs, &lt;30 min to fall asleep.</div></div>
+    <div class="section-label">30-day habit experiment</div>
+    <div class="step"><div class="step-num n-blue">1</div><div class="step-text">Log everything in a simple spreadsheet first — before building the app. You'll understand what data matters.</div></div>
+    <div class="step"><div class="step-num n-blue">2</div><div class="step-text">Try one intervention at a time (amla juice for 30 days, then sleep protocol, then walking after meals). Measure what changes.</div></div>
+    <div class="step"><div class="step-num n-blue">3</div><div class="step-text">Document your experience in public — Twitter/X thread, LinkedIn post. This builds your audience before you build the product.</div></div>
+  </div>
+</div>
+
+<!-- PANEL 6: SOUTH ASIAN GUIDE -->
+<div class="panel" id="panel-guide">
+  <div class="card">
+    <div class="card-title">South Asian longevity — the numbers that matter</div>
+    <div class="highlight">Indians develop type 2 diabetes at a BMI of 23–25 kg/m² — the same level where Europeans are considered healthy. This is Dr. Mohan's most important finding and it changes everything about how South Asians should approach aging.</div>
+    <div class="section-label">Indian-specific longevity biomarkers</div>
+    <div class="step"><div class="step-num n-amber">→</div><div class="step-text"><strong>Healthy BMI for Indians:</strong> 18–22.9 (not 25 like Western charts)</div></div>
+    <div class="step"><div class="step-num n-amber">→</div><div class="step-text"><strong>Waist cut-off:</strong> Men &lt;90cm, Women &lt;80cm (visceral fat risk in South Asians is higher at same waist size)</div></div>
+    <div class="step"><div class="step-num n-amber">→</div><div class="step-text"><strong>HbA1c target:</strong> Under 5.6% (prediabetes in Indians begins earlier than in Westerners)</div></div>
+    <div class="step"><div class="step-num n-amber">→</div><div class="step-text"><strong>Fasting glucose:</strong> Under 90 mg/dL (not 100, which is the Western standard)</div></div>
+    <div class="step"><div class="step-num n-amber">→</div><div class="step-text"><strong>Postprandial glucose (2hr after rice meal):</strong> Under 120 mg/dL — this is where most Indians fail silently</div></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Indian foods with clinical longevity evidence</div>
+    <div class="food-row"><div class="food-emoji">🫐</div><div><div class="food-name">Amla (Indian gooseberry)</div><div class="food-why">Highest natural vitamin C source. Reduces LDL by 12–15% in 3 months (Thilakchand et al). One amla daily = real cardiovascular protection.</div></div></div>
+    <div class="food-row"><div class="food-emoji">🍛</div><div><div class="food-name">Dal (lentils)</div><div class="food-why">Low glycemic index (18–29). High in resistant starch — feeds gut microbiome. 1 cup/day associated with 20% lower cardiovascular mortality (Dahl et al).</div></div></div>
+    <div class="food-row"><div class="food-emoji">🌿</div><div><div class="food-name">Turmeric (curcumin)</div><div class="food-why">NF-kB pathway inhibitor — reduces systemic inflammation. 500mg curcumin with black pepper (piperine) daily shows CRP reduction in RCTs. Cook with fat for absorption.</div></div></div>
+    <div class="food-row"><div class="food-emoji">🌰</div><div><div class="food-name">Almonds (soaked)</div><div class="food-why">23 almonds = 6g protein, magnesium, vitamin E. Reduces postprandial glucose spike when eaten before rice meals. ICMR recommends as snack replacement.</div></div></div>
+    <div class="food-row"><div class="food-emoji">🫚</div><div><div class="food-name">Ghee (in moderation)</div><div class="food-why">Contains butyrate — a short-chain fatty acid that feeds colon cells and reduces inflammation. 1 tsp/day is protective, not harmful. Fear of ghee is largely Western bias.</div></div></div>
+    <div class="food-row"><div class="food-emoji">🍚</div><div><div class="food-name">Rice (eaten cold)</div><div class="food-why">Cooling cooked rice for 12 hrs increases resistant starch by 10×, lowering glycemic index significantly. Ancient Indian practice of eating previous day's rice was nutritionally sound.</div></div></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Daily rhythm grounded in clinical evidence</div>
+    <div class="step"><div class="step-num n-green">6–7am</div><div class="step-text"><strong>Wake with sunlight.</strong> 10 min outdoor light exposure sets circadian rhythm. Lowers cortisol spike. Indian tradition of surya namaskar has this built in.</div></div>
+    <div class="step"><div class="step-num n-green">7am</div><div class="step-text"><strong>Amla + warm water.</strong> Empty stomach. Delays gastric emptying, reduces morning glucose spike.</div></div>
+    <div class="step"><div class="step-num n-green">8–9am</div><div class="step-text"><strong>Breakfast: eggs or dal + 4 soaked almonds.</strong> High protein, low GI. Reduces total caloric intake for the day by 20% (satiety effect).</div></div>
+    <div class="step"><div class="step-num n-green">10min walk after lunch</div><div class="step-text"><strong>Non-negotiable.</strong> A 10-min walk after rice reduces 2hr postprandial glucose by 20–30%. Most impactful single habit for South Asians per Dr. Mohan's clinical data.</div></div>
+    <div class="step"><div class="step-num n-green">Lunch: 12–1pm</div><div class="step-text"><strong>Dal + sabzi + small rice portion.</strong> Eat dal first (protein buffer), then vegetables, then rice. Order matters — reduces glucose spike by up to 38% (Shukla et al, Cornell).</div></div>
+    <div class="step"><div class="step-num n-green">Sunset</div><div class="step-text"><strong>Finish eating 3 hrs before sleep.</strong> Aligns with circadian insulin sensitivity. Ancient Indian practice of early dinner (before 7pm) was clinically correct.</div></div>
+    <div class="step"><div class="step-num n-green">10pm</div><div class="step-text"><strong>Sleep with dark, cool room.</strong> 18–20°C is optimal. Indians often sleep in warm rooms — this suppresses melatonin and raises HbA1c over time.</div></div>
+  </div>
+</div>
+
+<!-- PANEL 7: DEEPMIND TOOLS -->
+<div class="panel" id="panel-deepmind">
+  <div class="card">
+    <div class="card-title">What each DeepMind tool gives you — practically</div>
+    <div class="step"><div class="step-num n-purple">AF</div><div class="step-text"><strong>AlphaFold (alphafold.ebi.ac.uk)</strong> — Free database of 200M+ protein structures. You can look up FOXO3, SIRT1, mTOR — proteins that control aging — and see exactly how supplements or compounds interact with them. No API needed. Just download the PDB file and use Gemini to explain it in plain language.</div></div>
+    <div class="step"><div class="step-num n-purple">AM</div><div class="step-text"><strong>AlphaMissense</strong> — Predicts whether a genetic variant is harmful or benign. If a user uploads their 23andMe data, you can cross-reference their variants against AlphaMissense to flag aging-related risk. Dataset is free on GitHub.</div></div>
+    <div class="step"><div class="step-num n-purple">AG</div><div class="step-text"><strong>AlphaGenome (2025, new)</strong> — Predicts how DNA sequences affect gene expression. This is the tool for understanding how lifestyle changes gene activity — the core of epigenetic longevity. Still research-grade but datasets are public.</div></div>
+    <div class="step"><div class="step-num n-purple">G2</div><div class="step-text"><strong>Gemini 2.5 (your main tool)</strong> — Free via AI Studio. You use this as the brain of your app — reading research, interpreting biomarkers, generating personalized advice. 1M token context means you can feed it entire research papers.</div></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Your actual first DeepMind project — build this weekend</div>
+    <div class="highlight">Ask Gemini to explain what the FOXO3 protein does in aging, using the AlphaFold structure page as context. Then wrap that into a simple web page where anyone can type a protein name and get a plain-English explanation. This is your proof of concept — built in 2 days, free, and it demonstrates the entire vision.</div>
+    <button class="btn" onclick="sendPrompt('Help me build a simple web app where users type a protein name and Gemini explains its role in aging using AlphaFold data — step by step code')">Build this now ↗</button>
+  </div>
+</div>
+
+</div>
+
+<script>
+function show(id){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>

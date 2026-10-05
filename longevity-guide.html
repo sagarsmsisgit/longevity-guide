@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Longer — A Personal Longevity Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #F5F0E8;
+  --ink: #1A1814;
+  --ink-light: #5C574E;
+  --ink-faint: #9C9890;
+  --green: #2D5A27;
+  --green-light: #4A7C42;
+  --green-pale: #E8F0E6;
+  --amber: #8B5E1A;
+  --amber-pale: #F5ECD8;
+  --red: #7A2020;
+  --red-pale: #F5E0E0;
+  --blue: #1A3A5C;
+  --blue-pale: #E0EAF5;
+  --border: rgba(26,24,20,0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* HEADER */
+header {
+  padding: 80px 40px 60px;
+  max-width: 900px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--border);
+}
+
+.eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(42px, 7vw, 72px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 28px;
+}
+
+h1 em {
+  font-style: italic;
+  color: var(--green);
+}
+
+.subtitle {
+  font-size: 17px;
+  color: var(--ink-light);
+  max-width: 560px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.meta-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.meta-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--green);
+  background: var(--green-pale);
+  padding: 5px 12px;
+  border-radius: 2px;
+  letter-spacing: 0.05em;
+}
+
+.meta-note {
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+
+/* NAV */
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(245,240,232,0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+  padding: 0 40px;
+}
+
+.nav-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.nav-inner::-webkit-scrollbar { display: none; }
+
+.nav-item {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ink-faint);
+  padding: 16px 20px;
+  white-space: nowrap;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.nav-item:hover { color: var(--ink); border-bottom-color: var(--ink); }
+.nav-item.active { color: var(--green); border-bottom-color: var(--green); font-weight: 500; }
+
+/* MAIN */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 40px 120px;
+}
+
+/* SECTION */
+.section {
+  padding: 80px 0 60px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section:last-child { border-bottom: none; }
+
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+  max-width: 200px;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+
+h2 em { font-style: italic; color: var(--green); }
+
+.lead {
+  font-size: 17px;
+  color: var(--ink-light);
+  max-width: 620px;
+  margin-bottom: 48px;
+  line-height: 1.75;
+}
+
+/* PILLARS */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2px;
+  margin-bottom: 48px;
+  border: 1px solid var(--border);
+}
+
+.pillar {
+  padding: 32px 28px;
+  background: white;
+  cursor: pointer;
+  transition: background 0.2s;
+  position: relative;
+}
+
+.pillar:hover { background: var(--green-pale); }
+
+.pillar-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-faint);
+  margin-bottom: 16px;
+}
+
+.pillar-icon {
+  font-size: 28px;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.pillar h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.pillar p {
+  font-size: 13px;
+  color: var(--ink-light);
+  line-height: 1.6;
+}
+
+.pillar-score {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.score-bar {
+  flex: 1;
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.score-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: var(--green);
+  transition: width 1s ease;
+}
+
+.score-val {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-faint);
+  width: 28px;
+  text-align: right;
+}
+
+/* RESEARCH CARD */
+.research-block {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 40px;
+  margin: 40px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.research-block::before {
+  content: '"';
+  font-family: 'Playfair Display', serif;
+  font-size: 200px;
+  color: rgba(255,255,255,0.04);
+  position: absolute;
+  top: -40px;
+  left: 20px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.research-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.4);
+  margin-bottom: 20px;
+}
+
+.research-block blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-weight: 400;
+  line-height: 1.5;
+  font-style: italic;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.research-source {
+  font-size: 12px;
+  color: rgba(245,240,232,0.5);
+  font-family: 'DM Mono', monospace;
+}
+
+/* NUTRIENT TABLE */
+.nutrient-grid {
+  display: grid;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-bottom: 40px;
+}
+
+.nutrient-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 1fr 100px;
+  background: white;
+  align-items: center;
+  gap: 0;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.nutrient-row:hover { background: var(--green-pale); }
+
+.nutrient-row.header {
+  background: var(--ink);
+  color: var(--cream);
+  cursor: default;
+}
+
+.nutrient-row.header:hover { background: var(--ink); }
+
+.nutrient-cell {
+  padding: 16px 20px;
+  font-size: 13px;
+  border-right: 1px solid var(--border);
+}
+
+.nutrient-row.header .nutrient-cell {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.6);
+  border-right-color: rgba(255,255,255,0.08);
+}
+
+.nutrient-cell:last-child { border-right: none; }
+
+.nutrient-name {
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.nutrient-badge {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 2px;
+  letter-spacing: 0.05em;
+}
+
+.badge-green { background: var(--green-pale); color: var(--green); }
+.badge-amber { background: var(--amber-pale); color: var(--amber); }
+.badge-red { background: var(--red-pale); color: var(--red); }
+
+/* FOOD CARDS */
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-bottom: 40px;
+}
+
+.food-card {
+  background: white;
+  padding: 24px 20px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.food-card:hover { background: var(--amber-pale); }
+
+.food-emoji { font-size: 32px; margin-bottom: 12px; display: block; }
+
+.food-name {
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.food-desc {
+  font-size: 12px;
+  color: var(--ink-light);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.food-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--amber);
+  letter-spacing: 0.05em;
+}
+
+/* DAILY RHYTHM */
+.timeline {
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 40px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: var(--border);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 32px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.timeline-item:hover { transform: translateX(4px); }
+
+.timeline-dot {
+  position: absolute;
+  left: -36px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--green);
+  border: 2px solid var(--cream);
+  box-shadow: 0 0 0 1px var(--green);
+}
+
+.timeline-time {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-faint);
+  margin-bottom: 6px;
+  letter-spacing: 0.05em;
+}
+
+.timeline-title {
+  font-weight: 500;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.timeline-desc {
+  font-size: 13px;
+  color: var(--ink-light);
+  line-height: 1.6;
+}
+
+.timeline-research {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--green);
+  margin-top: 8px;
+  letter-spacing: 0.03em;
+}
+
+/* RISK METER */
+.risk-section {
+  background: var(--amber-pale);
+  border: 1px solid rgba(139,94,26,0.15);
+  padding: 40px;
+  margin: 40px 0;
+}
+
+.risk-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.risk-desc {
+  font-size: 14px;
+  color: var(--ink-light);
+  margin-bottom: 28px;
+}
+
+.risk-items {
+  display: grid;
+  gap: 16px;
+}
+
+.risk-item {
+  display: grid;
+  grid-template-columns: 200px 1fr 80px;
+  align-items: center;
+  gap: 16px;
+}
+
+.risk-label {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.risk-track {
+  height: 4px;
+  background: rgba(139,94,26,0.15);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.risk-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 1.2s ease;
+}
+
+.risk-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-faint);
+  text-align: right;
+}
+
+/* COMMITMENT */
+.commitment {
+  border: 1px solid var(--border);
+  padding: 48px 40px;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.commitment h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 16px;
+  color: var(--green);
+}
+
+.commitment p {
+  font-size: 15px;
+  color: var(--ink-light);
+  max-width: 480px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+
+.commitment-btn {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s;
+}
+
+.commitment-btn:hover { background: var(--green); }
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-note {
+  font-size: 12px;
+  color: var(--ink-faint);
+  max-width: 480px;
+  line-height: 1.6;
+}
+
+.footer-refs {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--green);
+  cursor: pointer;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate {
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+
+/* SCROLL REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+  header, main, footer { padding-left: 20px; padding-right: 20px; }
+  nav { padding: 0 20px; }
+  .nutrient-row { grid-template-columns: 120px 1fr; }
+  .nutrient-cell:nth-child(3) { display: none; }
+  .risk-item { grid-template-columns: 140px 1fr 60px; }
+}
+</style>
+</head>
+<body>
+
+<header class="animate">
+  <div class="eyebrow">Personal Longevity Guide · v1.0 · Built from Research</div>
+  <h1>Live <em>longer.</em><br>Live better.</h1>
+  <p class="subtitle">A personal guide to longevity — built on clinical research, not trends. Written for someone who wants to understand their body, not just track it.</p>
+  <div class="meta-row">
+    <span class="meta-tag">Evidence-based</span>
+    <span class="meta-tag">South Asian context</span>
+    <span class="meta-tag">Dr. Mohan research</span>
+    <span class="meta-note">Not medical advice — a personal learning guide</span>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-item active" href="#pillars">Pillars</a>
+    <a class="nav-item" href="#nutrition">Nutrition</a>
+    <a class="nav-item" href="#daily">Daily rhythm</a>
+    <a class="nav-item" href="#risk">Know your risk</a>
+    <a class="nav-item" href="#research">Research</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- PILLARS -->
+<section class="section reveal" id="pillars">
+  <div class="section-label">01 — Foundation</div>
+  <h2>The five <em>pillars</em> of longevity</h2>
+  <p class="lead">Research across decades points to the same core levers. Not supplements, not biohacks. These five things determine most of your healthspan.</p>
+
+  <div class="pillars">
+    <div class="pillar" onclick="alert('Nutrition: What you eat shapes your glucose, insulin, inflammation — the three core drivers of metabolic disease. For South Asians, carbohydrate quality matters more than quantity.')">
+      <div class="pillar-num">01</div>
+      <span class="pillar-icon">🥗</span>
+      <h3>Nutrition quality</h3>
+      <p>Carbohydrate quality, fiber, protein timing — the foundation everything else sits on.</p>
+      <div class="pillar-score">
+        <div class="score-bar"><div class="score-fill" style="width:90%"></div></div>
+        <span class="score-val">High</span>
+      </div>
+    </div>
+
+    <div class="pillar" onclick="alert('Movement: 7,000–10,000 steps daily + 2x resistance training weekly dramatically reduces metabolic risk. Walking after meals for 10 minutes lowers postprandial glucose significantly.')">
+      <div class="pillar-num">02</div>
+      <span class="pillar-icon">🚶</span>
+      <h3>Daily movement</h3>
+      <p>Steps, strength, and post-meal walks. Not the gym — consistent, daily, low-barrier movement.</p>
+      <div class="pillar-score">
+        <div class="score-bar"><div class="score-fill" style="width:85%"></div></div>
+        <span class="score-val">High</span>
+      </div>
+    </div>
+
+    <div class="pillar" onclick="alert('Sleep: Poor sleep raises cortisol, worsens insulin sensitivity, and increases hunger hormones. 7–9 hours of consistent sleep is one of the highest-leverage longevity tools available.')">
+      <div class="pillar-num">03</div>
+      <span class="pillar-icon">🌙</span>
+      <h3>Sleep depth</h3>
+      <p>7–9 hours. Consistent timing. Sleep affects insulin, cortisol, and cellular repair.</p>
+      <div class="pillar-score">
+        <div class="score-bar"><div class="score-fill" style="width:80%"></div></div>
+        <span class="score-val">High</span>
+      </div>
+    </div>
+
+    <div class="pillar" onclick="alert('Stress: Chronic stress raises cortisol, which directly raises blood glucose and promotes visceral fat storage — especially dangerous for South Asians who already have higher ectopic fat tendency.')">
+      <div class="pillar-num">04</div>
+      <span class="pillar-icon">🧘</span>
+      <h3>Stress load</h3>
+      <p>Chronic stress raises cortisol, raises glucose, promotes fat storage. Often ignored.</p>
+      <div class="pillar-score">
+        <div class="score-bar"><div class="score-fill" style="width:70%"></div></div>
+        <span class="score-val">Med</span>
+      </div>
+    </div>
+
+    <div class="pillar" onclick="alert('Connection: Social isolation is as damaging as smoking 15 cigarettes a day according to longevity research. Strong relationships are among the most consistent predictors of a long healthspan.')">
+      <div class="pillar-num">05</div>
+      <span class="pillar-icon">🤝</span>
+      <h3>Social health</h3>
+      <p>Loneliness is a longevity risk. Strong relationships predict healthspan more than many biomarkers.</p>
+      <div class="pillar-score">
+        <div class="score-bar"><div class="score-fill" style="width:60%"></div></div>
+        <span class="score-val">Med</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="research-block">
+    <div class="research-label">Kelly West Lecture · Dr. V. Mohan · Diabetes Care 2025</div>
+    <blockquote>"South Asians develop type 2 diabetes at a younger age and lower BMI, with hyperinsulinemia, greater insulin resistance, and rapid decline in beta-cell function — driven by high refined-carbohydrate diets and low physical activity."</blockquote>
+    <div class="research-source">Mohan V. Lessons Learned From Epidemiology of Type 2 Diabetes in South Asians. Diabetes Care. 2025.</div>
+  </div>
+</section>
+
+<!-- NUTRITION -->
+<section class="section reveal" id="nutrition">
+  <div class="section-label">02 — Nutrition</div>
+  <h2>What you eat <em>every day</em> is the lever</h2>
+  <p class="lead">Not a diet. Not a detox. Just understanding which foods help your body and which ones quietly work against it — specifically for your biology.</p>
+
+  <div class="nutrient-grid">
+    <div class="nutrient-row header">
+      <div class="nutrient-cell">Nutrient</div>
+      <div class="nutrient-cell">Why it matters for longevity</div>
+      <div class="nutrient-cell">Best Indian food sources</div>
+      <div class="nutrient-cell">Status</div>
+    </div>
+
+    <div class="nutrient-row" onclick="alert('Vitamin D: Most Indians are deficient. Low Vitamin D links to insulin resistance, immune weakness, and bone loss. Get 20 min direct sunlight daily + eat egg yolks, fatty fish. Test your blood level — ideal is 40–60 ng/mL.')">
+      <div class="nutrient-cell"><span class="nutrient-name">Vitamin D</span></div>
+      <div class="nutrient-cell">Insulin sensitivity, immunity, bone strength</div>
+      <div class="nutrient-cell">Sunlight, egg yolk, fatty fish, fortified milk</div>
+      <div class="nutrient-cell"><span class="nutrient-badge badge-red">Often low</span></div>
+    </div>
+
+    <div class="nutrient-row" onclick="alert('Vitamin B12: Vegetarians especially are at risk. Low B12 causes nerve damage, fatigue, and affects fetal development. Dr. Mohan notes low maternal B12 as a risk factor in South Asian diabetes development. Sources: dairy, eggs, meat. Vegetarians may need supplements.')">
+      <div class="nutrient-cell"><span class="nutrient-name">Vitamin B12</span></div>
+      <div class="nutrient-cell">Nerve health, energy, linked to diabetes risk in South Asians</div>
+      <div class="nutrient-cell">Dairy, paneer, eggs, fish, fortified foods</div>
+      <div class="nutrient-cell"><span class="nutrient-badge badge-red">Often low</span></div>
+    </div>
+
+    <div class="nutrient-row" onclick="alert('Dietary Fiber: The single most underconsumed nutrient in Indian urban diets. CURES study showed highest fiber intake had 69% LOWER odds of type 2 diabetes. Target 30g/day. Dal, sabzi, whole fruits, oats.')">
+      <div class="nutrient-cell"><span class="nutrient-name">Dietary Fiber</span></div>
+      <div class="nutrient-cell">Lowers glucose response, feeds gut bacteria, reduces T2D risk</div>
+      <div class="nutrient-cell">Dal, rajma, chana, sabzi, oats, whole fruits</div>
+      <div class="nutrient-cell"><span class="nutrient-badge badge-red">Often low</span></div>
+    </div>
+
+    <div class="nutrient-row" onclick="alert('Protein: Most Indian diets are protein-poor (~12% of energy vs recommended 20%+). Protein slows glucose absorption, preserves muscle mass, and creates satiety. Add dal, curd, paneer, eggs, or legumes to every meal.')">
+      <div class="nutrient-cell"><span class="nutrient-name">Protein</span></div>
+      <div class="nutrient-cell">Muscle preservation, satiety, slows glucose absorption</div>
+      <div class="nutrient-cell">Dal, curd, paneer, eggs, soya, moong</div>
+      <div class="nutrient-cell"><span class="nutrient-badge badge-amber">Usually low</span></div>
+    </div>
+
+    <div class="nutrient-row" onclick="alert('Magnesium: Involved in 300+ enzymatic reactions. Deficiency linked to insulin resistance and poor sleep. Sources: dark leafy greens, pumpkin seeds, almonds, dark chocolate.')">
+      <div class="nutrient-cell"><span class="nutrient-name">Magnesium</span></div>
+      <div class="nutrient-cell">Insulin function, sleep, muscle recovery, 300+ enzymes</div>
+      <div class="nutrient-cell">Spinach, pumpkin seeds, almonds, dark chocolate</div>
+      <div class="nutrient-cell"><span class="nutrient-badge badge-amber">Often missed</span></div>
+    </div>
+
+    <div class="nutrient-row" onclick="alert('Omega-3: Anti-inflammatory. Reduces cardiovascular risk, improves insulin sensitivity. Flaxseeds and walnuts give ALA (plant form). Fish gives EPA/DHA (more bioavailable). Aim for fatty fish 2x/week or consider algae-based supplement.')">
+      <div class="nutrient-cell"><span class="nutrient-name">Omega-3</span></div>
+      <div class="nutrient-cell">Anti-inflammatory, heart health, brain function</div>
+      <div class="nutrient-cell">Flaxseed, walnuts, fatty fish, chia seeds</div>
+      <div class="nutrient-cell"><span class="nutrient-badge badge-amber">Often low</span></div>
+    </div>
+
+    <div class="nutrient-row" onclick="alert('Vitamin C: Antioxidant, collagen synthesis, immune function. Most Indians get enough through diet if eating fresh fruits and vegetables daily — amla is one of the highest natural sources in the world.')">
+      <div class="nutrient-cell"><span class="nutrient-name">Vitamin C</span></div>
+      <div class="nutrient-cell">Immunity, collagen, antioxidant protection</div>
+      <div class="nutrient-cell">Amla, guava, lemon, bell pepper, tomato</div>
+      <div class="nutrient-cell"><span class="nutrient-badge badge-green">Usually OK</span></div>
+    </div>
+  </div>
+
+  <p style="font-size:13px;color:var(--ink-faint);margin-bottom:40px">Click any row to learn more. These are general patterns — get blood tests to know your actual levels.</p>
+
+  <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:400;margin-bottom:20px">The rice problem — <em>what the research actually says</em></h3>
+
+  <div class="food-grid">
+    <div class="food-card" onclick="alert('White rice GI = 79. The ICMR-INDIAB study (18,090 Indians) found people eating ~198g/day had 19-26% higher odds of prediabetes vs people eating ~81g/day. The issue is not rice itself — it is the quantity and the lack of fiber/protein alongside it.')">
+      <span class="food-emoji">🍚</span>
+      <div class="food-name">White rice</div>
+      <div class="food-desc">GI 79. High glycemic load when eaten in large portions without fiber or protein.</div>
+      <div class="food-tag">GI: 79 · Eat less or pair well</div>
+    </div>
+
+    <div class="food-card" onclick="alert('Brown rice GI = 55–65. Mohan RCT (2014): replacing white rice with brown rice for 5 days reduced glucose AUC by 19.8% and fasting insulin by 57% in overweight Asian Indians. Practical challenge: texture and availability in India.')">
+      <span class="food-emoji">🟤</span>
+      <div class="food-name">Brown rice</div>
+      <div class="food-desc">GI 55–65. Same meal, lower glucose response. More fiber, more resistant starch.</div>
+      <div class="food-tag">GI: 55–65 · Better choice</div>
+    </div>
+
+    <div class="food-card" onclick="alert('Brown rice + dal together: Mohan RCT showed this combination reduced glucose AUC by 22.9% vs white rice alone. The protein and fiber from dal slows glucose absorption significantly. This is a genuinely powerful, culturally natural combination.')">
+      <span class="food-emoji">🫘</span>
+      <div class="food-name">Rice + dal together</div>
+      <div class="food-desc">Adding dal to any rice meal slows glucose absorption significantly. Research-proven combination.</div>
+      <div class="food-tag">Best: rice + legumes always</div>
+    </div>
+
+    <div class="food-card" onclick="alert('Almonds: Gayathri et al. 2023 RCT (400 overweight Asian Indians, 12 weeks): 43g almonds/day reduced HOMA-IR by 0.4 and improved insulin sensitivity. Also lowered total cholesterol. A real, research-backed daily habit.')">
+      <span class="food-emoji">🥜</span>
+      <div class="food-name">Almonds daily</div>
+      <div class="food-desc">43g/day for 12 weeks reduced insulin resistance in overweight Asian Indians. Clinical trial evidence.</div>
+      <div class="food-tag">Research: Gayathri et al. 2023</div>
+    </div>
+
+    <div class="food-card" onclick="alert('Amla (Indian gooseberry): One of the richest natural sources of Vitamin C on earth. Also has tannins and polyphenols with anti-inflammatory and blood sugar modulating effects. Eat raw, as juice, or as murabba — traditional Indian medicine had it right.')">
+      <span class="food-emoji">🫐</span>
+      <div class="food-name">Amla</div>
+      <div class="food-desc">Extraordinarily high Vitamin C. Polyphenols with anti-inflammatory and glucose-modulating effects.</div>
+      <div class="food-tag">Underrated superfood</div>
+    </div>
+
+    <div class="food-card" onclick="alert('Added sugar: ICMR-INDIAB (2025): highest added sugar consumers (~46g/day) had 14-26% higher odds of newly diagnosed T2D and prediabetes vs lowest consumers (~10g/day). Check: chai with 2 tsp sugar = ~10g. 3 cups = 30g already.')">
+      <span class="food-emoji">🍬</span>
+      <div class="food-name">Added sugar</div>
+      <div class="food-desc">~46g/day linked to 14–26% higher prediabetes risk. 3 cups of sweet chai gets you there fast.</div>
+      <div class="food-tag">Target: under 25g/day</div>
+    </div>
+  </div>
+</section>
+
+<!-- DAILY RHYTHM -->
+<section class="section reveal" id="daily">
+  <div class="section-label">03 — Daily rhythm</div>
+  <h2>What a <em>good day</em> actually looks like</h2>
+  <p class="lead">Longevity is built in daily habits, not annual checkups. This is a research-informed daily template — not a rigid plan, a direction.</p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-time">6:00–7:00 AM</div>
+      <div class="timeline-title">Wake with the light. No phone for 30 minutes.</div>
+      <div class="timeline-desc">Morning light sets your circadian rhythm — which controls cortisol, insulin, and sleep quality. Delaying phone use lowers morning cortisol spike.</div>
+      <div class="timeline-research">↳ Circadian biology / sleep science</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-time">7:00–8:00 AM</div>
+      <div class="timeline-title">High protein breakfast. No skipping.</div>
+      <div class="timeline-desc">Skipping breakfast worsens glucose control for the rest of the day. Aim for eggs, curd, or dal — protein slows glucose absorption and creates satiety.</div>
+      <div class="timeline-research">↳ Meal timing research + ICMR-INDIAB dietary data</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-time">After every meal</div>
+      <div class="timeline-title">Walk for 10 minutes.</div>
+      <div class="timeline-desc">Post-meal walking is one of the most effective ways to lower postprandial glucose. Even 10 minutes significantly reduces the glucose spike. No gym required.</div>
+      <div class="timeline-research">↳ Postprandial glucose research — multiple clinical trials</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-time">12:00–1:00 PM</div>
+      <div class="timeline-title">Lunch: rice with dal and sabzi — in that pairing.</div>
+      <div class="timeline-desc">Eat vegetables first, then dal, then rice. Order matters — fiber and protein first slows the glucose impact of carbohydrates eaten after.</div>
+      <div class="timeline-research">↳ Mohan et al. 2014 rice substitution RCT</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-time">4:00–5:00 PM</div>
+      <div class="timeline-title">Almonds as a snack. Not biscuits.</div>
+      <div class="timeline-desc">43g of almonds daily reduced insulin resistance in overweight Asian Indians over 12 weeks. Replace the afternoon biscuit or namkeen habit with a small handful.</div>
+      <div class="timeline-research">↳ Gayathri et al. Frontiers in Nutrition 2023</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-time">6:00–7:00 PM</div>
+      <div class="timeline-title">Strength or resistance training — 2–3x per week.</div>
+      <div class="timeline-desc">Muscle mass is a longevity biomarker. South Asians tend to have lower muscle mass (sarcopenia) which worsens insulin resistance. Building muscle is one of the most impactful things you can do.</div>
+      <div class="timeline-research">↳ South Asian phenotype research — Mohan 2025</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-time">7:00–8:00 PM</div>
+      <div class="timeline-title">Light early dinner. Done by 8pm if possible.</div>
+      <div class="timeline-desc">Eating late disrupts circadian metabolism. The body handles glucose better earlier in the day. A 12-hour eating window (8am–8pm) is a simple form of time-restricted eating with solid evidence.</div>
+      <div class="timeline-research">↳ Chrono-nutrition and time-restricted eating research</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-time">10:00–10:30 PM</div>
+      <div class="timeline-title">Sleep. Same time every night.</div>
+      <div class="timeline-desc">Consistency matters more than duration. Going to bed at the same time trains your circadian rhythm, improves sleep quality, and normalizes cortisol and insulin the next morning.</div>
+      <div class="timeline-research">↳ Sleep and metabolic health research</div>
+    </div>
+  </div>
+</section>
+
+<!-- RISK -->
+<section class="section reveal" id="risk">
+  <div class="section-label">04 — Know your risk</div>
+  <h2>The <em>South Asian</em> metabolic reality</h2>
+  <p class="lead">Standard Western health guidelines were not built for your body. The research from Dr. Mohan's group shows why South Asians need different thresholds and earlier vigilance.</p>
+
+  <div class="risk-section">
+    <div class="risk-title">Key risk thresholds — South Asian specific</div>
+    <div class="risk-desc">These differ from standard Western guidelines. Know your numbers against these benchmarks.</div>
+    <div class="risk-items">
+      <div class="risk-item">
+        <span class="risk-label">White rice daily</span>
+        <div class="risk-track"><div class="risk-fill" style="width:41%;background:#8B5E1A"></div></div>
+        <span class="risk-num">81g low risk</span>
+      </div>
+      <div class="risk-item">
+        <span class="risk-label">Added sugar daily</span>
+        <div class="risk-track"><div class="risk-fill" style="width:22%;background:#8B5E1A"></div></div>
+        <span class="risk-num">10g low risk</span>
+      </div>
+      <div class="risk-item">
+        <span class="risk-label">BMI for diabetes risk</span>
+        <div class="risk-track"><div class="risk-fill" style="width:57%;background:#7A2020"></div></div>
+        <span class="risk-num">23 kg/m² — lower than West</span>
+      </div>
+      <div class="risk-item">
+        <span class="risk-label">Fasting glucose target</span>
+        <div class="risk-track"><div class="risk-fill" style="width:72%;background:#2D5A27"></div></div>
+        <span class="risk-num">Under 100 mg/dL</span>
+      </div>
+      <div class="risk-item">
+        <span class="risk-label">HbA1c target</span>
+        <div class="risk-track"><div class="risk-fill" style="width:68%;background:#2D5A27"></div></div>
+        <span class="risk-num">Under 5.7%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="research-block">
+    <div class="research-label">ICMR–INDIAB Survey · Nature Medicine · 2025 · n=18,090 Indians</div>
+    <blockquote>"Highest white rice consumers (~198g/day) had 19–26% higher likelihood of newly diagnosed type 2 diabetes and prediabetes compared with lowest consumers (~81g/day)."</blockquote>
+    <div class="research-source">Anjana RM, Sudha V, Mohan V et al. Nature Medicine. 2025.</div>
+  </div>
+
+  <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:400;margin:40px 0 16px">Tests to get annually</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:2px;background:var(--border);border:1px solid var(--border)">
+    <div style="background:white;padding:24px 20px">
+      <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--ink-faint);margin-bottom:8px">METABOLIC</div>
+      <div style="font-weight:500;font-size:14px;margin-bottom:4px">HbA1c</div>
+      <div style="font-size:12px;color:var(--ink-light)">3-month glucose average. Most important single number.</div>
+    </div>
+    <div style="background:white;padding:24px 20px">
+      <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--ink-faint);margin-bottom:8px">METABOLIC</div>
+      <div style="font-weight:500;font-size:14px;margin-bottom:4px">Fasting insulin</div>
+      <div style="font-size:12px;color:var(--ink-light)">Detects insulin resistance before glucose goes abnormal.</div>
+    </div>
+    <div style="background:white;padding:24px 20px">
+      <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--ink-faint);margin-bottom:8px">VITAMIN</div>
+      <div style="font-weight:500;font-size:14px;margin-bottom:4px">Vitamin D</div>
+      <div style="font-size:12px;color:var(--ink-light)">Deficiency extremely common in India. Ideal: 40–60 ng/mL.</div>
+    </div>
+    <div style="background:white;padding:24px 20px">
+      <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--ink-faint);margin-bottom:8px">VITAMIN</div>
+      <div style="font-weight:500;font-size:14px;margin-bottom:4px">Vitamin B12</div>
+      <div style="font-size:12px;color:var(--ink-light)">Critical for vegetarians. Linked to South Asian diabetes risk.</div>
+    </div>
+    <div style="background:white;padding:24px 20px">
+      <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--ink-faint);margin-bottom:8px">CARDIAC</div>
+      <div style="font-weight:500;font-size:14px;margin-bottom:4px">Lipid panel</div>
+      <div style="font-size:12px;color:var(--ink-light)">Total, LDL, HDL, triglycerides. South Asians often have low HDL.</div>
+    </div>
+    <div style="background:white;padding:24px 20px">
+      <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--ink-faint);margin-bottom:8px">THYROID</div>
+      <div style="font-weight:500;font-size:14px;margin-bottom:4px">TSH</div>
+      <div style="font-size:12px;color:var(--ink-light)">Thyroid affects metabolism, weight, energy. Often undiagnosed.</div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section class="section reveal" id="research">
+  <div class="section-label">05 — Research</div>
+  <h2>Where this knowledge <em>comes from</em></h2>
+  <p class="lead">Every recommendation in this guide is grounded in peer-reviewed research. These are the key papers — not summaries, not blog posts.</p>
+
+  <div style="display:grid;gap:2px;background:var(--border);border:1px solid var(--border)">
+    <div style="background:white;padding:28px 24px;cursor:pointer" onclick="window.open('https://doi.org/10.1017/s0007114509990468')">
+      <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--ink-faint);margin-bottom:10px">Br J Nutr · 2009 · CURES-59 · n=1,843</div>
+      <div style="font-weight:500;font-size:14px;margin-bottom:6px">Dietary carbohydrates, glycaemic load and newly detected type 2 diabetes in urban Chennai</div>
+      <div style="font-size:13px;color:var(--ink-light)">Refined grains: OR 5.31 higher T2D risk. Fiber: OR 0.31 protective. White rice = 66% of total carb intake.</div>
+      <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--green);margin-top:12px">Mohan V et al. → doi.org/10.1017/s0007114509990468</div>
+    </div>
+
+    <div style="background:white;padding:28px 24px;cursor:pointer" onclick="window.open('https://doi.org/10.1038/s41591-025-03949-4')">
+      <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--ink-faint);margin-bottom:10px">Nature Medicine · 2025 · ICMR-INDIAB · n=18,090</div>
+      <div style="font-weight:500;font-size:14px;margin-bottom:6px">Dietary profiles and metabolic risk factors across India</div>
+      <div style="font-size:13px;color:var(--ink-light)">High rice intake: 19–26% higher T2D/prediabetes odds. High added sugar: 14–26% higher odds. National survey data.</div>
+      <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--green);margin-top:12px">Anjana RM, Mohan V et al. → doi.org/10.1038/s41591-025-03949-4</div>
+    </div>
+
+    <div style="background:white;padding:28px 24px;cursor:pointer" onclick="window.open('https://doi.org/10.1089/dia.2013.0259')">
+      <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--ink-faint);margin-bottom:10px">Diabetes Technol Ther · 2014 · RCT · n=15</div>
+      <div style="font-weight:500;font-size:14px;margin-bottom:6px">Brown rice vs white rice: glucose and insulin responses in overweight Asian Indians</div>
+      <div style="font-size:13px;color:var(--ink-light)">Brown rice reduced glucose AUC by 19.8%, fasting insulin by 57% vs white rice over 5 days.</div>
+      <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--green);margin-top:12px">Mohan V et al. → doi.org/10.1089/dia.2013.0259</div>
+    </div>
+
+    <div style="background:white;padding:28px 24px;cursor:pointer" onclick="window.open('https://doi.org/10.3389/fnut.2022.1055923')">
+      <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--ink-faint);margin-bottom:10px">Frontiers in Nutrition · 2023 · RCT · n=400</div>
+      <div style="font-weight:500;font-size:14px;margin-bottom:6px">Almonds and insulin sensitivity in overweight Asian Indian adults</div>
+      <div style="font-size:13px;color:var(--ink-light)">43g/day almonds for 12 weeks: HOMA-IR −0.4, insulin disposition index +0.7, cholesterol −5.4 mg/dL.</div>
+      <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--green);margin-top:12px">Gayathri R, Mohan V et al. → doi.org/10.3389/fnut.2022.1055923</div>
+    </div>
+
+    <div style="background:white;padding:28px 24px;cursor:pointer" onclick="window.open('https://doi.org/10.2337/dci24-0046')">
+      <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--ink-faint);margin-bottom:10px">Diabetes Care · 2025 · Kelly West Lecture</div>
+      <div style="font-weight:500;font-size:14px;margin-bottom:6px">Lessons from epidemiology of type 2 diabetes in South Asians</div>
+      <div style="font-size:13px;color:var(--ink-light)">South Asian phenotype: younger onset, lower BMI, hyperinsulinemia, greater insulin resistance. Urban prevalence 22–25%.</div>
+      <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--green);margin-top:12px">Mohan V. → doi.org/10.2337/dci24-0046</div>
+    </div>
+  </div>
+
+  <div class="commitment">
+    <h3>This is just the beginning.</h3>
+    <p>This guide is version 1 — built from research, lived experience, and a genuine desire to help people live longer. The next version will have an AI that answers your longevity questions, tracks your habits, and connects to your devices.</p>
+    <button class="commitment-btn" onclick="alert('Thank you. This guide will grow. The next version will include an AI health Q&A, personal tracking, and device sync. Stay tuned.')">I want to follow this journey</button>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-note">
+    This guide is for personal education only — not medical advice. Always consult a doctor before making significant changes to your diet or lifestyle. Research citations are from peer-reviewed journals and linked directly.
+  </div>
+  <div class="footer-refs" onclick="document.getElementById('research').scrollIntoView({behavior:'smooth'})">View all research →</div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Active nav
+const sections = document.querySelectorAll('.section');
+const navItems = document.querySelectorAll('.nav-item');
+
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navItems.forEach(n => n.classList.remove('active'));
+      const id = e.target.getAttribute('id');
+      const active = document.querySelector(`.nav-item[href="#${id}"]`);
+      if (active) active.classList.add('active');
+    }
+  });
+}, { threshold: 0.3 });
+
+sections.forEach(s => navObserver.observe(s));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+
+</body>
+</html>
